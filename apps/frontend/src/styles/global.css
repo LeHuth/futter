@@ -112,9 +112,9 @@
     --text-overline: 0.6875rem;    /* 11px */
 
     /* Line heights */
-    --leading-tight: 1.15;
-    --leading-normal: 1.5;
-    --leading-relaxed: 1.7;
+    --leading-tight: 1;
+    --leading-normal: 1.2;
+    --leading-relaxed: 1.5;
 
     /* --- Spacing --- */
     --space-1: 4px;
@@ -166,54 +166,56 @@
    02. BASE RESET & GLOBAL STYLES
    ============================================================ */
 
-*,
-*::before,
-*::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+@layer base {
+    *,
+    *::before,
+    *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
 
-html {
-    font-size: 16px;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
+    html {
+        font-size: 16px;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
 
-body {
-    font-family: var(--font-family);
-    font-weight: var(--font-weight-regular);
-    font-size: var(--text-body-md);
-    line-height: var(--leading-normal);
-    color: var(--color-text);
-    background-color: var(--bg-primary);
-}
+    body {
+        font-family: var(--font-family);
+        font-weight: var(--font-weight-regular);
+        font-size: var(--text-body-md);
+        line-height: var(--leading-normal);
+        color: var(--color-text);
+        background-color: var(--bg-primary);
+    }
 
-img {
-    max-width: 100%;
-    display: block;
-}
+    img {
+        max-width: 100%;
+        display: block;
+    }
 
-a {
-    color: inherit;
-    text-decoration: none;
-}
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
 
-button {
-    cursor: pointer;
-    font-family: inherit;
-    border: none;
-    background: none;
-}
+    button {
+        cursor: pointer;
+        font-family: inherit;
+        border: none;
+        background: none;
+    }
 
-input,
-textarea,
-select {
-    font-family: inherit;
-    font-size: inherit;
-    border: none;
-    outline: none;
-    background: none;
+    input,
+    textarea,
+    select {
+        font-family: inherit;
+        font-size: inherit;
+        border: none;
+        outline: none;
+        background: none;
+    }
 }
 
 
@@ -262,7 +264,7 @@ select {
 .text-body-sm {
     font-size: var(--text-body-sm);
     font-weight: var(--font-weight-regular);
-    line-height: var(--leading-relaxed);
+    line-height: var(--leading-tight);
 }
 
 .text-caption {
@@ -437,109 +439,6 @@ select {
 /* ============================================================
    06. CARDS
    ============================================================ */
-
-.card {
-    background: var(--bg-surface);
-    border: var(--border-standard);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
-    overflow: hidden;
-    transition:
-            transform var(--transition-normal),
-            box-shadow var(--transition-normal);
-}
-
-.card:hover {
-    transform: translate(-2px, -2px);
-    box-shadow: 7px 7px 0px var(--color-shadow);
-}
-
-.card-banner {
-    padding: var(--space-6);
-    position: relative;
-    min-height: 190px;
-}
-
-/* Banner color variants */
-.card-banner[data-color="coral"]  { background: var(--color-coral); }
-.card-banner[data-color="sky"]    { background: var(--color-sky); }
-.card-banner[data-color="mint"]   { background: var(--color-mint); }
-.card-banner[data-color="butter"] { background: var(--color-butter); }
-.card-banner[data-color="violet"] { background: var(--color-violet); }
-.card-banner[data-color="lime"]   { background: var(--color-lime); }
-.card-banner[data-color="peach"]  { background: var(--color-peach); }
-.card-banner[data-color="pink"]   { background: var(--color-pink); }
-
-.card-banner::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--color-border);
-}
-
-.card-icon {
-    width: 40px;
-    height: 40px;
-    border-radius: var(--radius-circle);
-    background: var(--gray-900);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: var(--text-body-md);
-    font-weight: var(--font-weight-bold);
-    color: inherit;      /* inherits banner color for contrast */
-    margin-bottom: var(--space-3);
-}
-
-.card-title {
-    font-size: var(--text-heading-lg);
-    font-weight: var(--font-weight-bold);
-    line-height: var(--leading-tight);
-    color: var(--gray-900);
-}
-
-.card-meta {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--space-2);
-    padding: var(--space-4) var(--space-5);
-}
-
-.card-favorite {
-    position: absolute;
-    bottom: var(--space-4);
-    right: var(--space-4);
-    width: 36px;
-    height: 36px;
-    border-radius: var(--radius-sm);
-    background: var(--bg-surface);
-    border: 2px solid var(--gray-900);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-shadow: 2px 2px 0px var(--color-shadow);
-    cursor: pointer;
-    transition: transform var(--transition-fast);
-}
-
-.card-favorite:hover {
-    transform: scale(1.1);
-}
-
-.card-favorite.active {
-    color: var(--color-favorite);
-}
-
-.card-arrow {
-    position: absolute;
-    bottom: var(--space-3);
-    right: var(--space-4);
-    color: var(--gray-300);
-    font-weight: var(--font-weight-bold);
-}
 
 
 /* ============================================================

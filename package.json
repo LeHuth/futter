@@ -4,7 +4,7 @@
 	"packageManager": "pnpm@9.0.0",
 	"scripts": {
 		"dev": "concurrently -n backend,frontend \"pnpm:dev:backend\" \"pnpm:dev:frontend\"",
-		"dev:frontend": "pnpm --filter frontend dev",
+		"dev:frontend": "pnpm --filter frontend dev --host",
 		"dev:backend": "cd apps/backend && php artisan serve --host=127.0.0.1 --port=8000",
 		"lint": "pnpm -r lint"
 	},
