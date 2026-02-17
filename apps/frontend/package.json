@@ -15,6 +15,8 @@
   "dependencies": {
     "@astrojs/vue": "^5.1.4",
     "astro": "^5.17.1",
+    "motion-v": "2.0.0-beta.4",
+    "unplugin-vue-components": "^31.0.0",
     "vue": "^3.5.28"
   },
   "devDependencies": {
